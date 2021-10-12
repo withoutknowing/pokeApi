@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://ws.bky.pokemon/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  name="PokemonService" targetNamespace="http://ws.bky.pokemon/">
+    <wsdl:documentation>SOAP Definition for ws-pokemon</wsdl:documentation>
+    <wsdl:types>
+        <xsd:schema>
+            <xsd:import namespace="http://ws.bky.pokemon/" schemaLocation="pokemon.xsd"/>
+        </xsd:schema>
+    </wsdl:types>	
+    <wsdl:message name="PokemonByNameRequest">
+        <wsdl:part name="parameters" element="tns:PokemonByNameRequest"/>
+    </wsdl:message>
+    <wsdl:message name="PokemonsResponse">
+        <wsdl:part name="parameters" element="tns:PokemonsResponse"/>
+    </wsdl:message>
+    
+    <wsdl:message name="Abilities">
+        <wsdl:part name="parameters" element="tns:Abilities"/>
+    </wsdl:message>
+    <wsdl:message name="AbilitiesResponse">
+        <wsdl:part name="parameters" element="tns:AbilitiesResponse"/>
+    </wsdl:message>
+    
+    <wsdl:message name="BaseExperience">
+        <wsdl:part name="parameters" element="tns:BaseExperience"/>
+    </wsdl:message>
+    <wsdl:message name="BaseExperienceResponse">
+        <wsdl:part name="parameters" element="tns:BaseExperienceResponse"/>
+    </wsdl:message>
+    
+    <wsdl:message name="HeldItems">
+        <wsdl:part name="parameters" element="tns:HeldItems"/>
+    </wsdl:message>
+    <wsdl:message name="HeldItemsResponse">
+        <wsdl:part name="parameters" element="tns:HeldItemsResponse"/>
+    </wsdl:message>
+    
+    <wsdl:message name="IdPokemon">
+        <wsdl:part name="parameters" element="tns:IdPokemon"/>
+    </wsdl:message>
+    <wsdl:message name="IdResponse">
+        <wsdl:part name="parameters" element="tns:IdResponse"/>
+    </wsdl:message>
+    
+    <wsdl:message name="LocationAreaEncounters">
+        <wsdl:part name="parameters" element="tns:LocationAreaEncounters"/>
+    </wsdl:message>
+    <wsdl:message name="LocationAreaEncountersResponse">
+        <wsdl:part name="parameters" element="tns:LocationAreaEncountersResponse"/>
+    </wsdl:message>
+
+    <!--This element defines the service operations and the combination of input and output elements to clients-->
+    <wsdl:portType name="PokemonServicePortType">
+        <wsdl:operation name="GetPokemonByName">
+            <wsdl:input message="tns:PokemonByNameRequest"/>
+            <wsdl:output message="tns:PokemonsResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetAbilitiesByName">
+            <wsdl:input message="tns:Abilities"/>
+            <wsdl:output message="tns:AbilitiesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetBaseExperienceByName">
+            <wsdl:input message="tns:BaseExperience"/>
+            <wsdl:output message="tns:BaseExperienceResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetHeldItemsByName">
+            <wsdl:input message="tns:HeldItems"/>
+            <wsdl:output message="tns:HeldItemsResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetIdPokemonByName">
+            <wsdl:input message="tns:IdPokemon"/>
+            <wsdl:output message="tns:IdPokemonResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetLocationAreaEncountersByName">
+            <wsdl:input message="tns:LocationAreaEncounters"/>
+            <wsdl:output message="tns:LocationAreaEncountersResponse"/>
+        </wsdl:operation>
+        
+    </wsdl:portType>
+
+    <!-- This element provides specific details on how an operation will actually be transmitted over the network-->
+    <wsdl:binding name="PokemonServiceSOAP" type="tns:PokemonServicePortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GetPokemonByName">
+            <soap:operation soapAction="http://ws.bky.pokemon/pokemon/GetPokemonByName"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetAbilitiesByName">
+            <soap:operation soapAction="http://ws.bky.pokemon/pokemon/GetAbilitiesByName"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetBaseExperienceByName">
+            <soap:operation soapAction="http://ws.bky.pokemon/pokemon/GetBaseExperienceByName"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetHeldItemsByName">
+            <soap:operation soapAction="http://ws.bky.pokemon/pokemon/GetHeldItemsByName"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetIdPokemonByName">
+            <soap:operation soapAction="http://ws.bky.pokemon/pokemon/GetIdPokemonByName"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetLocationAreaEncountersByName">
+            <soap:operation soapAction="http://ws.bky.pokemon/pokemon/GetLocationAreaEncountersByName"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <!-- Definition of the service and the endpoint. -->
+    <wsdl:service name="PokemonService">
+        <wsdl:port name="PokemonServiceSOAP" binding="tns:PokemonServiceSOAP">
+            <soap:address location="http://localhost:8084/soap/service/PokemonService.wsdl"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

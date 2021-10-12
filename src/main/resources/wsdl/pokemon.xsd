@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" 
+           xmlns:n1="http://ws.bky.pokemon/" 
+           targetNamespace="http://ws.bky.pokemon/" 
+           elementFormDefault="qualified" 
+           attributeFormDefault="unqualified" 
+           vc:minVersion="1.1">
+	    <xs:element name="pokemon">
+        <xs:annotation>
+            <xs:documentation>Pokemon information</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="abilities" type="xs:string" use="optional"/>
+            <xs:attribute name="baseExperience" type="xs:string" use="optional"/>
+            <xs:attribute name="heldItems" type="xs:string" use="optional"/>
+            <xs:attribute name="id" type="xs:string" use="optional"/>
+            <xs:attribute name="name" type="xs:string" use="optional"/>
+            <xs:attribute name="locationAreaEncounters" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>  
+    <xs:element name="PokemonsResponse">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="n1:pokemon"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>	
+    <xs:element name="PokemonByNameRequest">
+        <xs:annotation>
+            <xs:documentation>Pokemon by name</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AbilitiesResponse">
+        <xs:complexType>
+            <xs:attribute name="ability" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+     <xs:element name="Abilities">
+        <xs:annotation>
+            <xs:documentation>Pokemon Habilities by name</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+     <xs:element name="BaseExperienceResponse">
+        <xs:complexType>
+            <xs:attribute name="baseExperience" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+     <xs:element name="BaseExperience">
+        <xs:annotation>
+            <xs:documentation>Pokemon Base Experience by name</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+      <xs:element name="HeldItemsResponse">
+        <xs:complexType>
+            <xs:attribute name="heldItems" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+     <xs:element name="HeldItems">
+        <xs:annotation>
+            <xs:documentation>Pokemon Held Items by name</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+       <xs:element name="IdPokemonResponse">
+        <xs:complexType>
+            <xs:attribute name="idPokemon" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+     <xs:element name="IdPokemon">
+        <xs:annotation>
+            <xs:documentation>Pokemon ID by name</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+     <xs:element name="LocationAreaEncountersResponse">
+        <xs:complexType>
+            <xs:attribute name="locationAreaEncounters" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+     <xs:element name="LocationAreaEncounters">
+        <xs:annotation>
+            <xs:documentation>Pokemon Location Area Encounters by name</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+   
+</xs:schema>
